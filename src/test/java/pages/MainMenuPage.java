@@ -1,2 +1,4 @@
-package pages;public class MainMenuPage {
+package pages;
+
+public class MainMenuPage {
 }

@@ -1,2 +1,4 @@
-package tests;public class LoginTests {
+package tests;
+
+public class LoginTests {
 }
