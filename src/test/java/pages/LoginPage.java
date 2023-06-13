@@ -14,6 +14,8 @@ public class LoginPage {
     private WebElement passwordField;
     @FindBy(xpath = "//*[@id=\"login\"]/button/i")
     private WebElement loginButton;
+    @FindBy(xpath = "//*[@id=\"flash\"]")
+    private WebElement snackbar;
     private WebDriver driver;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -33,5 +35,9 @@ public class LoginPage {
     }
     public void clickOnLoginButton() {
         loginButton.click();
+    }
+    public String getSnackbarText() {
+        String text = snackbar.getText();
+        return text;
     }
 }

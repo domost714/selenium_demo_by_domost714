@@ -9,10 +9,12 @@ public class MainMenuPage {
     private WebDriver driver;
     @FindBy(linkText = "Form Authentication")
     private WebElement formAuthentication;
+
     public MainMenuPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     public void selectFormAuthentication() {
         formAuthentication.click();
     }

@@ -9,10 +9,12 @@ public class SecureAreaPage {
     @FindBy(xpath = "//*[@id=\"flash\"]")
     private WebElement snackbar;
     private WebDriver driver;
+
     public SecureAreaPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     public String getSnackbarText() {
         String text = snackbar.getText();
         return text;

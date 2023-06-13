@@ -14,6 +14,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class LoginTests {
     private WebDriver driver;
+
     @BeforeMethod
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver", "C:/drivers/chromedriver.exe");
@@ -24,7 +25,7 @@ public class LoginTests {
     }
 
     @Test
-    public void goToLoginPage() {
+    public void goToLoginPageTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         LoginPage loginPage = new LoginPage(driver);
 
@@ -33,16 +34,26 @@ public class LoginTests {
     }
 
     @Test
-    public void successfulLogin() {
+    public void successfulLoginTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         SecureAreaPage secureAreaPage = new SecureAreaPage(driver);
-
         mainMenuPage.selectFormAuthentication();
         loginPage.typeIntoUsernameField("tomsmith");
         loginPage.typeIntoPasswordField("SuperSecretPassword!");
         loginPage.clickOnLoginButton();
         assertTrue(secureAreaPage.getSnackbarText().contains("secure area"));
+    }
+
+    @Test
+    public void failedLoginTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        mainMenuPage.selectFormAuthentication();
+        loginPage.typeIntoUsernameField("tomsmith");
+        loginPage.typeIntoPasswordField("haslo");
+        loginPage.clickOnLoginButton();
+        assertTrue(loginPage.getSnackbarText().contains("invalid"));
     }
 
     @AfterMethod
