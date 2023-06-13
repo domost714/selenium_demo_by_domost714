@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainMenuPage;
+import pages.SecureAreaPage;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -29,6 +30,19 @@ public class LoginTests {
 
         mainMenuPage.selectFormAuthentication();
         assertTrue(loginPage.getTitleText().contains("Login Page"));
+    }
+
+    @Test
+    public void successfulLogin() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        SecureAreaPage secureAreaPage = new SecureAreaPage(driver);
+
+        mainMenuPage.selectFormAuthentication();
+        loginPage.typeIntoUsernameField("tomsmith");
+        loginPage.typeIntoPasswordField("SuperSecretPassword!");
+        loginPage.clickOnLoginButton();
+        assertTrue(secureAreaPage.getSnackbarText().contains("secure area"));
     }
 
     @AfterMethod
