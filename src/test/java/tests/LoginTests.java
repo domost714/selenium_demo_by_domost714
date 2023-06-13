@@ -46,11 +46,44 @@ public class LoginTests {
     }
 
     @Test
-    public void failedLoginTest() {
+    public void incorrectUsernameFailedLoginTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        mainMenuPage.selectFormAuthentication();
+        loginPage.typeIntoUsernameField("tester");
+        loginPage.typeIntoPasswordField("SuperSecretPassword!");
+        loginPage.clickOnLoginButton();
+        assertTrue(loginPage.getSnackbarText().contains("invalid"));
+    }
+
+    @Test
+    public void incorrectBothFieldsFailedLoginTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        mainMenuPage.selectFormAuthentication();
+        loginPage.typeIntoUsernameField("tester");
+        loginPage.typeIntoPasswordField("haslo");
+        loginPage.clickOnLoginButton();
+        assertTrue(loginPage.getSnackbarText().contains("invalid"));
+    }
+
+    @Test
+    public void incorrectPasswordFailedLoginTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         mainMenuPage.selectFormAuthentication();
         loginPage.typeIntoUsernameField("tomsmith");
+        loginPage.typeIntoPasswordField("haslo");
+        loginPage.clickOnLoginButton();
+        assertTrue(loginPage.getSnackbarText().contains("invalid"));
+    }
+
+    @Test
+    public void properUsernameButWithCapitalLettersFailedLoginTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        mainMenuPage.selectFormAuthentication();
+        loginPage.typeIntoUsernameField("TOMSMITH");
         loginPage.typeIntoPasswordField("haslo");
         loginPage.clickOnLoginButton();
         assertTrue(loginPage.getSnackbarText().contains("invalid"));
