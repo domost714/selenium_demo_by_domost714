@@ -15,6 +15,13 @@ import static org.testng.AssertJUnit.assertTrue;
 public class LoginTests {
     private WebDriver driver;
 
+    private void successfulLogin() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.typeIntoUsernameField("tomsmith");
+        loginPage.typeIntoPasswordField("SuperSecretPassword!");
+        loginPage.clickOnLoginButton();
+    }
+
     @BeforeMethod
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver", "C:/drivers/chromedriver.exe");
@@ -36,15 +43,25 @@ public class LoginTests {
     @Test
     public void successfulLoginTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
-        LoginPage loginPage = new LoginPage(driver);
         SecureAreaPage secureAreaPage = new SecureAreaPage(driver);
         mainMenuPage.selectFormAuthentication();
-        loginPage.typeIntoUsernameField("tomsmith");
-        loginPage.typeIntoPasswordField("SuperSecretPassword!");
-        loginPage.clickOnLoginButton();
+        successfulLogin();
         assertTrue(secureAreaPage.getSnackbarText().contains("secure area"));
     }
 
+    @Test
+    public void successfulLoginAndLogoutTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        SecureAreaPage secureAreaPage = new SecureAreaPage(driver);
+        mainMenuPage.selectFormAuthentication();
+        successfulLogin();
+        assertTrue(secureAreaPage.getSnackbarText().contains("secure area"));
+        secureAreaPage.clickOnLogoutButton();
+        assertTrue(loginPage.getTitleText().contains("Login Page"));
+        successfulLogin();
+        assertTrue(secureAreaPage.getSnackbarText().contains("secure area"));
+    }
     @Test
     public void incorrectUsernameFailedLoginTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);

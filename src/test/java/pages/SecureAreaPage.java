@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class SecureAreaPage {
     @FindBy(xpath = "//*[@id=\"flash\"]")
     private WebElement snackbar;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/a/i")
+    private WebElement logoutButton;
     private WebDriver driver;
 
     public SecureAreaPage(WebDriver driver) {
@@ -18,5 +20,9 @@ public class SecureAreaPage {
     public String getSnackbarText() {
         String text = snackbar.getText();
         return text;
+    }
+
+    public void clickOnLogoutButton() {
+        logoutButton.click();
     }
 }
