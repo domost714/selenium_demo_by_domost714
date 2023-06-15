@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3f2200d-a0dc-4912-825f-480972293bfc" name="Changes" comment="new tests for LoginTests class and its refactor">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CheckboxesTests.java" afterDir="false" />
+    <list default="true" id="e3f2200d-a0dc-4912-825f-480972293bfc" name="Changes" comment="add the first checkbox tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainMenuPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckboxesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckboxesTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.CheckboxesTests.goToCheckboxesPageTest">
+  <component name="RunManager" selected="TestNG.CheckboxesTests.verifyDefaultValuesInCheckboxesTest">
     <configuration name="CheckboxesTests.goToCheckboxesPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium_demo_by_domost714" />
       <extension name="coverage">
@@ -70,7 +69,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.incorrectBothFieldsFailedLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckboxesTests.verifyDefaultValuesInCheckboxesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium_demo_by_domost714" />
       <extension name="coverage">
         <pattern>
@@ -79,8 +78,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTests" />
-      <option name="METHOD_NAME" value="incorrectBothFieldsFailedLoginTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckboxesTests" />
+      <option name="METHOD_NAME" value="verifyDefaultValuesInCheckboxesTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -144,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckboxesTests.verifyDefaultValuesInCheckboxesTest" />
         <item itemvalue="TestNG.CheckboxesTests.goToCheckboxesPageTest" />
         <item itemvalue="TestNG.LoginTests.successfulLoginAndLogoutTest" />
         <item itemvalue="TestNG.LoginTests.successfulLoginTest" />
         <item itemvalue="TestNG.LoginTests.properUsernameButWithCapitalLettersFailedLoginTest" />
-        <item itemvalue="TestNG.LoginTests.incorrectBothFieldsFailedLoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686741448243</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add the first checkbox tests">
+      <created>1686823114047</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686823114047</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +230,7 @@
     <MESSAGE value="add third login test and format" />
     <MESSAGE value="new tests for LoginTests class" />
     <MESSAGE value="new tests for LoginTests class and its refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="new tests for LoginTests class and its refactor" />
+    <MESSAGE value="add the first checkbox tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the first checkbox tests" />
   </component>
 </project>

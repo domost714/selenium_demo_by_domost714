@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import pages.CheckboxesPage;
 import pages.MainMenuPage;
 
+import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class CheckboxesTests {
@@ -29,6 +30,15 @@ public class CheckboxesTests {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         mainMenuPage.selectCheckboxes();
         assertTrue(checkboxesPage.getTitleText().contains("Checkboxes"));
+    }
+
+    @Test
+    public void verifyDefaultValuesInCheckboxesTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
+        mainMenuPage.selectCheckboxes();
+        assertFalse(checkboxesPage.isSelected(1));
+        assertTrue(checkboxesPage.isSelected(2));
     }
 
     @AfterMethod
