@@ -9,6 +9,8 @@ public class MainMenuPage {
     private WebDriver driver;
     @FindBy(linkText = "Form Authentication")
     private WebElement formAuthentication;
+    @FindBy(linkText = "Checkboxes")
+    private WebElement checkboxes;
 
     public MainMenuPage(WebDriver driver) {
         this.driver = driver;
@@ -17,5 +19,9 @@ public class MainMenuPage {
 
     public void selectFormAuthentication() {
         formAuthentication.click();
+    }
+
+    public void selectCheckboxes() {
+        checkboxes.click();
     }
 }
