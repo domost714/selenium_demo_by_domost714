@@ -31,4 +31,13 @@ public class CheckboxesPage {
             return secondCheckbox.isSelected();
         }
     }
+
+    public void selectCheckbox(int number) {
+        if (number == 1) {
+            firstCheckbox.click();
+        }
+        else {
+            secondCheckbox.click();
+        }
+    }
 }

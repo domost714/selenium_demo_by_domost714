@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3f2200d-a0dc-4912-825f-480972293bfc" name="Changes" comment="add the first checkbox tests">
+    <list default="true" id="e3f2200d-a0dc-4912-825f-480972293bfc" name="Changes" comment="add new test for Checkbox class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckboxesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckboxesTests.java" afterDir="false" />
@@ -50,7 +50,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.CheckboxesTests.verifyDefaultValuesInCheckboxesTest">
+  <component name="RunManager" selected="TestNG.CheckboxesTests.verifyMarkingCheckboxesTest">
     <configuration name="CheckboxesTests.goToCheckboxesPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium_demo_by_domost714" />
       <extension name="coverage">
@@ -87,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.properUsernameButWithCapitalLettersFailedLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckboxesTests.verifyMarkingCheckboxesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium_demo_by_domost714" />
       <extension name="coverage">
         <pattern>
@@ -96,8 +96,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTests" />
-      <option name="METHOD_NAME" value="properUsernameButWithCapitalLettersFailedLoginTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckboxesTests" />
+      <option name="METHOD_NAME" value="verifyMarkingCheckboxesTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckboxesTests.verifyMarkingCheckboxesTest" />
         <item itemvalue="TestNG.CheckboxesTests.verifyDefaultValuesInCheckboxesTest" />
         <item itemvalue="TestNG.CheckboxesTests.goToCheckboxesPageTest" />
         <item itemvalue="TestNG.LoginTests.successfulLoginAndLogoutTest" />
         <item itemvalue="TestNG.LoginTests.successfulLoginTest" />
-        <item itemvalue="TestNG.LoginTests.properUsernameButWithCapitalLettersFailedLoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686823114047</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add new test for Checkbox class">
+      <created>1686824508377</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686824508377</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +238,7 @@
     <MESSAGE value="new tests for LoginTests class" />
     <MESSAGE value="new tests for LoginTests class and its refactor" />
     <MESSAGE value="add the first checkbox tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the first checkbox tests" />
+    <MESSAGE value="add new test for Checkbox class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new test for Checkbox class" />
   </component>
 </project>
