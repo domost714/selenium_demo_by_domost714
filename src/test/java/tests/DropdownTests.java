@@ -35,7 +35,7 @@ public class DropdownTests {
     }
 
     @Test
-    public void verifyDropdownListContent() {
+    public void verifyDropdownListContentTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
         mainMenuPage.selectDropdown();
@@ -47,13 +47,22 @@ public class DropdownTests {
     }
 
     @Test
-    public void verifyUserCannotSelectOnlyTheFirstText() {
+    public void verifyUserCannotSelectOnlyTheFirstTextTest() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
         mainMenuPage.selectDropdown();
         assertTrue(dropdownPage.isAvailableOption(0).contains("true"));
         assertEquals(dropdownPage.isAvailableOption(1), null);
         assertEquals(dropdownPage.isAvailableOption(2), null);
+    }
+
+    @Test
+    public void verifyElementAreCorrectlySelectedTest() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        DropdownPage dropdownPage = new DropdownPage(driver);
+        mainMenuPage.selectDropdown();
+        assertTrue(dropdownPage.isSelectedOption(1));
+        assertTrue(dropdownPage.isSelectedOption(2));
     }
 
     @AfterMethod

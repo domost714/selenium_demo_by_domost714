@@ -28,6 +28,11 @@ public class DropdownPage {
         return text;
     }
 
+    public void selectOption(int option) {
+        Select optionsDropdown = new Select(dropdown);
+        optionsDropdown.selectByIndex(option);
+    }
+
     public List getDropdownContent() {
         Select optionsDropdown = new Select(dropdown);
         List<WebElement> options = optionsDropdown.getOptions();
@@ -42,5 +47,12 @@ public class DropdownPage {
         Select optionsDropdown = new Select(dropdown);
         List<WebElement> options = optionsDropdown.getOptions();
         return options.get(option).getAttribute("disabled");
+    }
+
+    public boolean isSelectedOption(int option) {
+        Select optionsDropdown = new Select(dropdown);
+        List<WebElement> options = optionsDropdown.getOptions();
+        selectOption(option);
+        return options.get(option).isSelected();
     }
 }
