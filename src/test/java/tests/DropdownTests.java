@@ -24,21 +24,19 @@ public class DropdownTests {
         chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(chromeOptions);
         driver.navigate().to("https://the-internet.herokuapp.com/");
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        mainMenuPage.selectDropdown();
     }
 
     @Test
     public void goToDropdownPageTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
-        mainMenuPage.selectDropdown();
         assertTrue(dropdownPage.getTitleText().contains("Dropdown List"));
     }
 
     @Test
     public void verifyDropdownListContentTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
-        mainMenuPage.selectDropdown();
         List<String> expectedNamesOfOptions = new ArrayList<>();
         expectedNamesOfOptions.add("Please select an option");
         expectedNamesOfOptions.add("Option 1");
@@ -48,9 +46,7 @@ public class DropdownTests {
 
     @Test
     public void verifyUserCannotSelectOnlyTheFirstTextTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
-        mainMenuPage.selectDropdown();
         assertTrue(dropdownPage.isAvailableOption(0).contains("true"));
         assertEquals(dropdownPage.isAvailableOption(1), null);
         assertEquals(dropdownPage.isAvailableOption(2), null);
@@ -58,9 +54,7 @@ public class DropdownTests {
 
     @Test
     public void verifyElementAreCorrectlySelectedTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
-        mainMenuPage.selectDropdown();
         assertTrue(dropdownPage.isSelectedOption(1));
         assertTrue(dropdownPage.isSelectedOption(2));
     }
