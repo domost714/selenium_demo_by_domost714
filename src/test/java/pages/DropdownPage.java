@@ -29,12 +29,18 @@ public class DropdownPage {
     }
 
     public List getDropdownContent() {
-        Select optionDropdown = new Select(dropdown);
-        List<WebElement> options = optionDropdown.getOptions();
+        Select optionsDropdown = new Select(dropdown);
+        List<WebElement> options = optionsDropdown.getOptions();
         List<String> namesOfOptions = new ArrayList<>();
         for (WebElement option : options) {
             namesOfOptions.add(option.getText());
         }
         return namesOfOptions;
+    }
+
+    public String isAvailableOption(int option) {
+        Select optionsDropdown = new Select(dropdown);
+        List<WebElement> options = optionsDropdown.getOptions();
+        return options.get(option).getAttribute("disabled");
     }
 }

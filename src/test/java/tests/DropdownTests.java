@@ -12,8 +12,7 @@ import pages.MainMenuPage;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.*;
 
 public class DropdownTests {
     private WebDriver driver;
@@ -45,6 +44,16 @@ public class DropdownTests {
         expectedNamesOfOptions.add("Option 1");
         expectedNamesOfOptions.add("Option 2");
         assertEquals(dropdownPage.getDropdownContent(), expectedNamesOfOptions);
+    }
+
+    @Test
+    public void verifyUserCannotSelectTheFirstText() {
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        DropdownPage dropdownPage = new DropdownPage(driver);
+        mainMenuPage.selectDropdown();
+        assertTrue(dropdownPage.isAvailableOption(0).contains("true"));
+        assertEquals(dropdownPage.isAvailableOption(1), null);
+        assertEquals(dropdownPage.isAvailableOption(2), null);
     }
 
     @AfterMethod
