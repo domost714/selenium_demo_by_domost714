@@ -49,8 +49,8 @@ public class DropdownTests {
     public void verifyUserCannotSelectOnlyTheFirstTextTest() {
         DropdownPage dropdownPage = new DropdownPage(driver);
         assertTrue(dropdownPage.isAvailableOption(0).contains("true"));
-        assertEquals(dropdownPage.isAvailableOption(1), null);
-        assertEquals(dropdownPage.isAvailableOption(2), null);
+        assertNull(dropdownPage.isAvailableOption(1));
+        assertNull(dropdownPage.isAvailableOption(2));
     }
 
     @Test
