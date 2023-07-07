@@ -47,7 +47,7 @@ public class DropdownTests {
     }
 
     @Test
-    public void verifyUserCannotSelectTheFirstText() {
+    public void verifyUserCannotSelectOnlyTheFirstText() {
         MainMenuPage mainMenuPage = new MainMenuPage(driver);
         DropdownPage dropdownPage = new DropdownPage(driver);
         mainMenuPage.selectDropdown();
