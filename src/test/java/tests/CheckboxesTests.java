@@ -22,30 +22,26 @@ public class CheckboxesTests {
         chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(chromeOptions);
         driver.navigate().to("https://the-internet.herokuapp.com/");
+        MainMenuPage mainMenuPage = new MainMenuPage(driver);
+        mainMenuPage.selectCheckboxes();
     }
 
     @Test
     public void goToCheckboxesPageTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
-        mainMenuPage.selectCheckboxes();
         assertTrue(checkboxesPage.getTitleText().contains("Checkboxes"));
     }
 
     @Test
     public void verifyDefaultValuesInCheckboxesTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
-        mainMenuPage.selectCheckboxes();
         assertFalse(checkboxesPage.isSelected(1));
         assertTrue(checkboxesPage.isSelected(2));
     }
 
     @Test
     public void verifyMarkingCheckboxesTest() {
-        MainMenuPage mainMenuPage = new MainMenuPage(driver);
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
-        mainMenuPage.selectCheckboxes();
         checkboxesPage.selectCheckbox(1);
         assertTrue(checkboxesPage.isSelected(1));
         checkboxesPage.selectCheckbox(1);
