@@ -1,5 +1,6 @@
 package tests;
 
+import conf.DataHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,11 +25,11 @@ public class LoginTests {
 
     @BeforeMethod
     public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver", "C:/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", DataHelper.chromeDriverLocation);
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(chromeOptions);
-        driver.navigate().to("https://the-internet.herokuapp.com/");
+        driver.navigate().to(DataHelper.websiteAddress);
     }
 
     @Test
