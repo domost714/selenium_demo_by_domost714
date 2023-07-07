@@ -12,6 +12,9 @@ public class MainMenuPage {
     @FindBy(linkText = "Checkboxes")
     private WebElement checkboxes;
 
+    @FindBy(linkText = "Dropdown")
+    private WebElement dropdown;
+
     public MainMenuPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -23,5 +26,9 @@ public class MainMenuPage {
 
     public void selectCheckboxes() {
         checkboxes.click();
+    }
+
+    public void selectDropdown() {
+        dropdown.click();
     }
 }
